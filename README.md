@@ -2,8 +2,3 @@
 
 sssds
 
-sss
-
-jbss
-
-ss
