@@ -1,0 +1,21 @@
+name: Run
+run-name: "Run on any branch"
+
+on:
+  workflow_dispatch: {}
+  push: # used for testing of this repo. Ignored in Required workflow
+    branches:
+      - '**' # Alternatively hardcode "main" instead of "if"s
+
+jobs:
+  run:
+    name: Run
+    continue-on-error: true
+    runs-on: ubuntu-24.04
+    container:
+      image: ubuntu
+    steps:
+      - uses: actions/checkout@v4
+      - name: Identify the last Committer
+        run: |
+          echo "run"
